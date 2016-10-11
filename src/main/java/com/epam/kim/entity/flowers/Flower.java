@@ -3,11 +3,10 @@ package com.epam.kim.flowers;
 import java.util.Date;
 
 public abstract class Flower {
-    private int price;
-    private int length;
-    private String color;
-    private Date dateOfBuying;
-
+    int price;
+    int length;
+    String color;
+    Date dateOfBuying;
     public int getPrice() {
         return price;
     }
