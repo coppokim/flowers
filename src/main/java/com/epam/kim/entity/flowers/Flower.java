@@ -30,27 +30,4 @@ public abstract class Flower {
         this.color = color;
     }
 
-//    public boolean equals(Object obj)
-//    {
-//        if(obj == this)
-//            return true;
-//
-//     /* obj ссылается на null */
-//
-//        if(obj == null)
-//            return false;
-//
-//     /* Удостоверимся, что ссылки имеют тот же самый тип */
-//
-//        if(!(getClass() == obj.getClass()))
-//            return false;
-//        else
-//        {
-//            Flower flower = (Flower)obj;
-//            if(flower.student_id == this.student_id)
-//                return true;
-//            else
-//                return false;
-//        }
-//    }
 }

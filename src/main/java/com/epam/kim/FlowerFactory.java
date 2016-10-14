@@ -17,15 +17,15 @@ public class FlowerFactory {
 
     public static Flower create(int type) {
         Properties prop = new Properties();
-        int price=0;
-        int length=0;
-        String color="";
+        int price = 0;
+        int length = 0;
+        String color = "";
         try {
             prop.load(new FileInputStream("src\\main\\resources\\flowers.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        switch (type){
+        switch (type) {
             case ROSE:
                 price = Integer.parseInt(prop.getProperty("price.rose"));
                 length = Integer.parseInt(prop.getProperty("length.rose"));
@@ -40,7 +40,7 @@ public class FlowerFactory {
                 price = Integer.parseInt(prop.getProperty("price.lily"));
                 length = Integer.parseInt(prop.getProperty("length.lily"));
                 color = prop.getProperty("color.lily");
-                return new Lily(price,length,color);
+                return new Lily(price, length, color);
             default:
                 return null;
         }

@@ -12,11 +12,12 @@ public class Bouquet {
     private List<Flower> flowerList = new ArrayList<Flower>();
     private Wrapper wrapper;
 
-    public void addFlower(int flowerCount){
+    public void addFlower(int flowerCount) {
         Random random = new Random();
-        for (int i=0;i<flowerCount;i++)
-        this.flowerList.add(FlowerFactory.create(random.nextInt(3)));
+        for (int i = 0; i < flowerCount; i++)
+            this.flowerList.add(FlowerFactory.create(random.nextInt(3)));
     }
+
     public List<Flower> getFlowerList() {
         return flowerList;
     }
