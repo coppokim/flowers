@@ -4,4 +4,7 @@ import com.epam.kim.entity.flowers.Flower;
 
 public class Tulip extends Flower {
 
+    public Tulip(int price, int length, String color) {
+        super();
+    }
 }

@@ -1,12 +1,11 @@
-package com.epam.kim.flowers;
-
-import java.util.Date;
+package com.epam.kim.entity.flowers;
 
 public abstract class Flower {
-    int price;
-    int length;
-    String color;
-    Date dateOfBuying;
+    private int price;
+    private int length;
+    private String color;
+
+
     public int getPrice() {
         return price;
     }
@@ -31,11 +30,27 @@ public abstract class Flower {
         this.color = color;
     }
 
-    public Date getDateOfBuying() {
-        return dateOfBuying;
-    }
-
-    public void setDateOfBuying(Date dateOfBuying) {
-        this.dateOfBuying = dateOfBuying;
-    }
+//    public boolean equals(Object obj)
+//    {
+//        if(obj == this)
+//            return true;
+//
+//     /* obj ссылается на null */
+//
+//        if(obj == null)
+//            return false;
+//
+//     /* Удостоверимся, что ссылки имеют тот же самый тип */
+//
+//        if(!(getClass() == obj.getClass()))
+//            return false;
+//        else
+//        {
+//            Flower flower = (Flower)obj;
+//            if(flower.student_id == this.student_id)
+//                return true;
+//            else
+//                return false;
+//        }
+//    }
 }
