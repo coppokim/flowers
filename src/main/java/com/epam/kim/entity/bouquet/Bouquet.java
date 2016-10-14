@@ -1,19 +1,21 @@
 package com.epam.kim.entity.bouquet;
 
+import com.epam.kim.FlowerFactory;
 import com.epam.kim.entity.flowers.Flower;
 import com.epam.kim.entity.wrapper.Wrapper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Bouquet {
     private List<Flower> flowerList = new ArrayList<Flower>();
     private Wrapper wrapper;
 
-    public void addFlower(Flower flower, int flowerCount){
-
+    public void addFlower(int flowerCount){
+        Random random = new Random();
         for (int i=0;i<flowerCount;i++)
-        this.flowerList.add(flower);
+        this.flowerList.add(FlowerFactory.create(random.nextInt(3)));
     }
     public List<Flower> getFlowerList() {
         return flowerList;

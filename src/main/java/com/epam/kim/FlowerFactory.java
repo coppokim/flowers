@@ -21,7 +21,7 @@ public class FlowerFactory {
         int length=0;
         String color="";
         try {
-            prop.load(new FileInputStream("flowers.properties"));
+            prop.load(new FileInputStream("src\\main\\resources\\flowers.properties"));
 
             switch (type){
                 case ROSE:
