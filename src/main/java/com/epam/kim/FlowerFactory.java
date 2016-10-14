@@ -22,43 +22,27 @@ public class FlowerFactory {
         String color="";
         try {
             prop.load(new FileInputStream("src\\main\\resources\\flowers.properties"));
-
-            switch (type){
-                case ROSE:
-                    price = Integer.parseInt(prop.getProperty("price.rose"));
-                case TULIP:
-                    price = Integer.parseInt(prop.getProperty("price.tulip"));
-                default:
-                    price = Integer.parseInt(prop.getProperty("price.lily"));
-            }
-            switch (type){
-                case ROSE:
-                    length = Integer.parseInt(prop.getProperty("length.rose"));
-                case TULIP:
-                    length = Integer.parseInt(prop.getProperty("length.tulip"));
-                default:
-                    length = Integer.parseInt(prop.getProperty("length.lily"));
-            }
-            switch (type){
-                case ROSE:
-                    color = prop.getProperty("color.rose");
-                case TULIP:
-                    color = prop.getProperty("color.tulip");
-                default:
-                    color = prop.getProperty("color.lily");
-            }
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-        switch (type) {
+        switch (type){
             case ROSE:
+                price = Integer.parseInt(prop.getProperty("price.rose"));
+                length = Integer.parseInt(prop.getProperty("length.rose"));
+                color = prop.getProperty("color.rose");
                 return new Rose(price, length, color);
             case TULIP:
+                price = Integer.parseInt(prop.getProperty("price.tulip"));
+                length = Integer.parseInt(prop.getProperty("length.tulip"));
+                color = prop.getProperty("color.tulip");
                 return new Tulip(price, length, color);
-            default:
+            case LILY:
+                price = Integer.parseInt(prop.getProperty("price.lily"));
+                length = Integer.parseInt(prop.getProperty("length.lily"));
+                color = prop.getProperty("color.lily");
                 return new Lily(price,length,color);
+            default:
+                return null;
         }
     }
 }
