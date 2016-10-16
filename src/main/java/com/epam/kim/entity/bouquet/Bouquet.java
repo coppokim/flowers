@@ -22,7 +22,7 @@ public class Bouquet {
         for (int i=0; i<this.getFlowerList().size(); i++){
             k += this.getFlowerList().get(i).getPrice();
         }
-
+        k += this.wrapper.getPrice();
         return k;
     }
     public List<Flower> getFlowerList() {
@@ -37,4 +37,11 @@ public class Bouquet {
         this.wrapper = wrapper;
     }
 
+    @Override
+    public String toString() {
+        return "Bouquet{" +
+                "flowerList=" + flowerList +
+                ", wrapper=" + wrapper +
+                '}';
+    }
 }
