@@ -1,7 +1,6 @@
 package com.epam.kim.entity.bouquet;
 
-import com.epam.kim.FlowerFactory;
-import com.epam.kim.entity.flowers.Flower;
+import com.epam.kim.FlowerBuilder;
 import com.epam.kim.entity.wrapper.Wrapper;
 
 import java.util.ArrayList;
@@ -9,20 +8,20 @@ import java.util.List;
 import java.util.Random;
 
 public class Bouquet {
-    private List<Flower> flowerList = new ArrayList<Flower>();
+    private List<FlowerBuilder> flowerList = new ArrayList<FlowerBuilder>();
     private Wrapper wrapper;
 
     public void addFlower(int flowerCount) {
         Random random = new Random();
         for (int i = 0; i < flowerCount; i++)
-            this.flowerList.add(FlowerFactory.create(random.nextInt(3)));
+            this.flowerList.add(FlowerBuilder.create(random.nextInt(3)));
     }
 
-    public List<Flower> getFlowerList() {
+    public List<FlowerBuilder> getFlowerList() {
         return flowerList;
     }
 
-    public void setFlowerList(List<Flower> flowerList) {
+    public void setFlowerList(List<FlowerBuilder> flowerList) {
         this.flowerList = flowerList;
     }
 
