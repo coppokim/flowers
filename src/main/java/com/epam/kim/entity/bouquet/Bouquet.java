@@ -22,6 +22,7 @@ public class Bouquet {
         for (int i=0; i<this.getFlowerList().size(); i++){
             k += this.getFlowerList().get(i).getPrice();
         }
+
         return k;
     }
     public List<Flower> getFlowerList() {
