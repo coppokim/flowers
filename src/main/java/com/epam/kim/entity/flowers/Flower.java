@@ -1,16 +1,29 @@
 package com.epam.kim.entity.flowers;
 
-import com.epam.kim.FlowerBuilder;
+import java.util.Date;
+import java.util.Random;
 
-public  class Flower extends FlowerBuilder{
+public abstract class Flower implements Comparable<Flower>{
     private int price;
     private int length;
     private String color;
+    private Date dateOfBuying;
 
     public Flower(int price, int length, String color) {
+        Random random = new Random();
         this.price = price;
         this.length = length;
         this.color = color;
+        this.dateOfBuying = new Date(System.currentTimeMillis() + random.nextInt(120)*1000);
+        //this.dateOfBuying = dateOfBuying;
+    }
+
+    public Date getDateOfBuying() {
+        return dateOfBuying;
+    }
+
+    public void setDateOfBuying(Date dateOfBuying) {
+        this.dateOfBuying = dateOfBuying;
     }
 
     public int getPrice() {
@@ -38,11 +51,7 @@ public  class Flower extends FlowerBuilder{
     }
 
     @Override
-    public String toString() {
-        return "Flower{" +
-                "price=" + price +
-                ", length=" + length +
-                ", color='" + color + '\'' +
-                '}';
+    public int compareTo(Flower flower) {
+        return this.dateOfBuying.compareTo(flower.dateOfBuying);
     }
 }
