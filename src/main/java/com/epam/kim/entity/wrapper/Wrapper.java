@@ -41,5 +41,11 @@ public class Wrapper {
         }
     }
 
-
+    @Override
+    public String toString() {
+        return "Wrapper{" +
+                "material='" + material + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
